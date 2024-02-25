@@ -2,7 +2,7 @@
 title = 'Test-Driven Development'
 date = 2024-02-26T04:21:30+07:00
 author = 'Gabriel Edgar'
-draft = true
+draft = false
 +++
 Di artikel ini akan membahas mengenai Test-Driven Development atau TDD. Sebelum masuk pada implementasi TDD, diperlukan pengetahuan mengenai apa itu TDD, keuntungan dari TDD, siklus pengerjaan, dan lain-lain.
 
