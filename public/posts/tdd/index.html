@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Test-Driven Development | Gabriel Edgar`s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Di artikel ini akan membahas mengenai Test-Driven Development atau TDD. Sebelum masuk pada implementasi TDD, diperlukan pengetahuan mengenai apa itu TDD, keuntungan dari TDD, siklus pengerjaan, dan lain-lain.
+Apa itu Test-Driven Development? TDD adalah sebuah metode pengembangan perangkat lunak yang menekankan pengujian atau sebelum menulis kode sebenarnya. TDD Ini memiliki siklus tertentu dalam menulis tes, menjalankannya, dan kemudian menulis kode agar tes tersebut berhasil. TDD melakukan pendekatan disiplin terhadap pengembangan perangkat lunak dan dapat menghasilkan kode yang lebih dapat diandalkan, mudah dipelihara (maintainable), dan terancang dengan baik.">
+    <meta name="generator" content="Hugo 0.123.3">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/tdd/">
+    
+
+    <meta property="og:title" content="Test-Driven Development" />
+<meta property="og:description" content="Di artikel ini akan membahas mengenai Test-Driven Development atau TDD. Sebelum masuk pada implementasi TDD, diperlukan pengetahuan mengenai apa itu TDD, keuntungan dari TDD, siklus pengerjaan, dan lain-lain.
+Apa itu Test-Driven Development? TDD adalah sebuah metode pengembangan perangkat lunak yang menekankan pengujian atau sebelum menulis kode sebenarnya. TDD Ini memiliki siklus tertentu dalam menulis tes, menjalankannya, dan kemudian menulis kode agar tes tersebut berhasil. TDD melakukan pendekatan disiplin terhadap pengembangan perangkat lunak dan dapat menghasilkan kode yang lebih dapat diandalkan, mudah dipelihara (maintainable), dan terancang dengan baik." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/tdd/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-26T04:21:30+07:00" />
+<meta property="article:modified_time" content="2024-02-26T04:21:30+07:00" />
+
+<meta itemprop="name" content="Test-Driven Development">
+<meta itemprop="description" content="Di artikel ini akan membahas mengenai Test-Driven Development atau TDD. Sebelum masuk pada implementasi TDD, diperlukan pengetahuan mengenai apa itu TDD, keuntungan dari TDD, siklus pengerjaan, dan lain-lain.
+Apa itu Test-Driven Development? TDD adalah sebuah metode pengembangan perangkat lunak yang menekankan pengujian atau sebelum menulis kode sebenarnya. TDD Ini memiliki siklus tertentu dalam menulis tes, menjalankannya, dan kemudian menulis kode agar tes tersebut berhasil. TDD melakukan pendekatan disiplin terhadap pengembangan perangkat lunak dan dapat menghasilkan kode yang lebih dapat diandalkan, mudah dipelihara (maintainable), dan terancang dengan baik."><meta itemprop="datePublished" content="2024-02-26T04:21:30+07:00" />
+<meta itemprop="dateModified" content="2024-02-26T04:21:30+07:00" />
+<meta itemprop="wordCount" content="475">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Test-Driven Development"/>
+<meta name="twitter:description" content="Di artikel ini akan membahas mengenai Test-Driven Development atau TDD. Sebelum masuk pada implementasi TDD, diperlukan pengetahuan mengenai apa itu TDD, keuntungan dari TDD, siklus pengerjaan, dan lain-lain.
+Apa itu Test-Driven Development? TDD adalah sebuah metode pengembangan perangkat lunak yang menekankan pengujian atau sebelum menulis kode sebenarnya. TDD Ini memiliki siklus tertentu dalam menulis tes, menjalankannya, dan kemudian menulis kode agar tes tersebut berhasil. TDD melakukan pendekatan disiplin terhadap pengembangan perangkat lunak dan dapat menghasilkan kode yang lebih dapat diandalkan, mudah dipelihara (maintainable), dan terancang dengan baik."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Gabriel Edgar`s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Test-Driven Development</h1>
+      
+      <p class="tracked">
+        By <strong>Gabriel Edgar</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2024-02-26T04:21:30+07:00">February 26, 2024</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Di artikel ini akan membahas mengenai Test-Driven Development atau TDD. Sebelum masuk pada implementasi TDD, diperlukan pengetahuan mengenai apa itu TDD, keuntungan dari TDD, siklus pengerjaan, dan lain-lain.</p>
+<h2 id="apa-itu-test-driven-development">Apa itu Test-Driven Development?</h2>
+<p>TDD adalah sebuah metode pengembangan perangkat lunak yang menekankan pengujian atau  sebelum menulis kode sebenarnya. TDD Ini memiliki siklus tertentu dalam menulis tes, menjalankannya, dan kemudian menulis kode agar tes tersebut berhasil. TDD melakukan pendekatan disiplin terhadap pengembangan perangkat lunak dan dapat menghasilkan kode yang lebih dapat diandalkan, mudah dipelihara (maintainable), dan terancang dengan baik.</p>
+<h2 id="keuntungan-tdd">Keuntungan TDD</h2>
+<ul>
+<li>Peningkatan Kualitas Kode</li>
+<li>Debugging dan Pemeliharaan Lebih Mudah</li>
+<li>Perkembangan Lebih Cepat</li>
+<li>Kolaborasi dan Komunikasi yang Lebih Baik</li>
+<li>Refactoring dan Evolusi Kode yang Lebih Mudah</li>
+</ul>
+<h2 id="siklus-pengerjaan-menggunakan-tdd">Siklus Pengerjaan menggunakan TDD</h2>
+<p>Siklus TDD biasanya terdiri dari langkah-langkah berikut:</p>
+<ol>
+<li>Menulis tes: Mulailah dengan menulis tes yang mendefinisikan perilaku yang diharapkan dari fungsionalitas tertentu. Tes ini sering kali ditulis sebagai fungsi atau metode yang menegaskan kondisi atau hasil tertentu.</li>
+<li>Jalankan pengujian: Jalankan pengujian untuk memverifikasi bahwa pengujian gagal. Ini merupakan langkah penting karena memastikan bahwa pengujian tersebut valid dan perilaku yang diharapkan belum diterapkan.</li>
+<li>Tulis kodenya: Terapkan kode dalam jumlah minimal yang diperlukan agar tes lulus. Fokus pada pemecahan masalah spesifik yang diatasi oleh pengujian, daripada menambahkan fungsionalitas yang tidak perlu.</li>
+<li>Jalankan pengujian lagi: Jalankan pengujian lagi untuk memeriksa apakah perubahan kode telah berhasil membuat pengujian berhasil. Jika pengujian gagal, ulangi dan ubah kode hingga pengujian berhasil.</li>
+<li>Memfaktorkan ulang kode: Setelah pengujian berhasil, Anda dapat memfaktorkan ulang kode untuk meningkatkan desain, struktur, atau kinerjanya sekaligus menjaga agar pengujian tetap berjalan. Pemfaktoran ulang memastikan kode tetap bersih dan dapat dipelihara.</li>
+<li>Ulangi siklusnya: Pindah ke fitur atau fungsi berikutnya dan ulangi prosesnya. Tulis tes baru, jalankan (yang seharusnya gagal pada awalnya), tulis kode agar berhasil, dan lanjutkan siklusnya.</li>
+</ol>
+<h2 id="contoh-implementasi-tdd">Contoh implementasi TDD</h2>
+<h4 id="step-1-dimulai-dari-pembuatan-tes-contoh-yang-digunakan-adalah-untuk-mencoba-mengintegrasikan-backend-dengan-html-hal-ini-terjadi-pada-file-testpy">Step 1: Dimulai dari pembuatan tes. Contoh yang digunakan adalah untuk mencoba mengintegrasikan backend dengan html. Hal ini terjadi pada file test.py</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.test <span style="color:#f92672">import</span> TestCase
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NewPageTest</span>(TestCase):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_new_page</span>(self):
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/&lt;URL yang akan dituju&gt;/&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertTemplateUsed(response, <span style="color:#e6db74">&#39;&lt;Nama HTML yang digunakan&gt;.html&#39;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(response<span style="color:#f92672">.</span>status_code, <span style="color:#ae81ff">200</span>)
+</span></span></code></pre></div><h4 id="step2-jalankan-tesnya-pada-terminal">Step2: Jalankan tesnya pada terminal.</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#Karena python yang digunakan lebih spesifik ke Django, maka di terminal hanya perlu menjalankan command berikut:</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span> python manage<span style="color:#f92672">.</span>py test
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Jika berhasil maka tidak akan ada indikasi error, namun jika ada error indikasi/warning akan terlihat melalui terminal</span>
+</span></span></code></pre></div><h4 id="step-3-buat-kode-yang-dapat-menyelesaikan-permasalahan-tersebut-bisa-dimulai-pada-file-viewspy">Step 3: Buat kode yang dapat menyelesaikan permasalahan tersebut. Bisa dimulai pada file views.py</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#views.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">render_new_page</span>(request):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> render(request, <span style="color:#e6db74">&#39;&lt;Nama HTML yang digunakan&gt;.html&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#urls.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .views <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;&#39;</span>, views<span style="color:#f92672">.</span>render_new_page, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;render_new_page&#39;</span>),
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h4 id="step-4-jalankan-pengujian-atau-tesnya-lagi-sama-seperti-langkah-kedua">Step 4: Jalankan pengujian atau tesnya lagi. sama seperti langkah kedua.</h4>
+<h4 id="step-5-melakukan-refactor-namun-pada-kesempatan-kali-ini-tidak-diperlukan-karena-pengujian-ataupun-algoritmalogic-dari-kode-tersebut-tidaklah-rumit">Step 5: Melakukan refactor, namun pada kesempatan kali ini tidak diperlukan karena pengujian ataupun algoritma/logic dari kode tersebut tidaklah rumit.</h4>
+<h4 id="step-6-ulangi-lagi-dari-step-1-jika-telah-berhasil-dan-perlu-melanjutkan-ke-tugas-selanjutnya-jika-masih-ada-kegagalan-maka-ulangi-mulai-dari-langkah-ke-3">Step 6: Ulangi lagi dari step 1 jika telah berhasil dan perlu melanjutkan ke tugas selanjutnya. Jika masih ada kegagalan maka ulangi mulai dari langkah ke 3.</h4>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  Gabriel Edgar`s Blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
