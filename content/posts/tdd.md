@@ -63,5 +63,5 @@ urlpatterns = [
 #### Step 5: Melakukan refactor, namun pada kesempatan kali ini tidak diperlukan karena pengujian ataupun algoritma/logic dari kode tersebut tidaklah rumit.
 #### Step 6: Ulangi lagi dari step 1 jika telah berhasil dan perlu melanjutkan ke tugas selanjutnya. Jika masih ada kegagalan maka ulangi mulai dari langkah ke 3.
 
-##Kesimpulan
+## Kesimpulan
 Metodologi pengujian pertama TDD menghadirkan keandalan kode, deteksi bug yang efisien, dan pengurangan biaya pemeliharaan jangka panjang. Pengujian terstruktur dengan serangkaian kasus uji ekspresif yang komprehensif mengoptimalkan proses pengembangan perangkat lunak dan meningkatkan kualitas kode.
