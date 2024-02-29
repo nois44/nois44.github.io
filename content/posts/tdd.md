@@ -31,10 +31,15 @@ Siklus TDD biasanya terdiri dari langkah-langkah berikut:
 from django.test import TestCase
 
 class NewPageTest(TestCase):
-    def test_new_page(self):
-        response = self.client.get('/<URL yang akan dituju>/')
+    def test_new_page(self): #Positive Case
+        response = self.client.get('/new_page/')
 
-        self.assertTemplateUsed(response, '<Nama HTML yang digunakan>.html')
+        self.assertTemplateUsed(response, 'newPage.html')
+        self.assertEqual(response.status_code, 200)
+
+    def test_new_page_url_invalid(self): #Negative Case
+        response = self.client.get('/new_pag/')
+
         self.assertEqual(response.status_code, 200)
 ```
 #### Step2: Jalankan tesnya pada terminal.
@@ -48,7 +53,7 @@ $ python manage.py test
 ```python
 #views.py
 def render_new_page(request):
-    return render(request, '<Nama HTML yang digunakan>.html')
+    return render(request, 'newPage.html')
 
 #urls.py
 from django.urls import path
