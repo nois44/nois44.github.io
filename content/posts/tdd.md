@@ -2,7 +2,7 @@
 title = 'Test-Driven Development'
 date = 2024-02-26T04:21:30+07:00
 author = 'Gabriel Edgar'
-draft = true
+draft = false
 +++
 Di artikel ini akan membahas mengenai Test-Driven Development atau TDD. Sebelum masuk pada implementasi TDD, diperlukan pengetahuan mengenai apa itu TDD, keuntungan dari TDD, siklus pengerjaan, dan lain-lain.
 
@@ -31,10 +31,15 @@ Siklus TDD biasanya terdiri dari langkah-langkah berikut:
 from django.test import TestCase
 
 class NewPageTest(TestCase):
-    def test_new_page(self):
-        response = self.client.get('/<URL yang akan dituju>/')
+    def test_new_page(self): #Positive Case
+        response = self.client.get('/new_page/')
 
-        self.assertTemplateUsed(response, '<Nama HTML yang digunakan>.html')
+        self.assertTemplateUsed(response, 'newPage.html')
+        self.assertEqual(response.status_code, 200)
+
+    def test_new_page_url_invalid(self): #Negative Case
+        response = self.client.get('/new_pag/')
+
         self.assertEqual(response.status_code, 200)
 ```
 #### Step2: Jalankan tesnya pada terminal.
@@ -48,7 +53,7 @@ $ python manage.py test
 ```python
 #views.py
 def render_new_page(request):
-    return render(request, '<Nama HTML yang digunakan>.html')
+    return render(request, 'newPage.html')
 
 #urls.py
 from django.urls import path
@@ -63,5 +68,5 @@ urlpatterns = [
 #### Step 5: Melakukan refactor, namun pada kesempatan kali ini tidak diperlukan karena pengujian ataupun algoritma/logic dari kode tersebut tidaklah rumit.
 #### Step 6: Ulangi lagi dari step 1 jika telah berhasil dan perlu melanjutkan ke tugas selanjutnya. Jika masih ada kegagalan maka ulangi mulai dari langkah ke 3.
 
-##Kesimpulan
+## Kesimpulan
 Metodologi pengujian pertama TDD menghadirkan keandalan kode, deteksi bug yang efisien, dan pengurangan biaya pemeliharaan jangka panjang. Pengujian terstruktur dengan serangkaian kasus uji ekspresif yang komprehensif mengoptimalkan proses pengembangan perangkat lunak dan meningkatkan kualitas kode.
