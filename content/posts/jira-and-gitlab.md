@@ -80,7 +80,7 @@ Di Jira Software, boards menampilkan pilihan masalah dalam kolom, dengan setiap 
 - Klik tab Kolom.
 - Tambahkan kolom baru, ubah nama kolom, hapus kolom, atau pindahkan kolom seperlunya.
 ![image](https://github.com/nois44/nois44.github.io/assets/94152526/417b6320-c380-4321-878d-46469baa8b8b)
-#### step 4: Buatlah sebuah Issue
+#### Step 4: Buatlah sebuah Issue
 Issue adalah landasan proyek Perangkat Lunak Jira Anda. Suatu masalah dapat mewakili sebuah cerita, epik, bug, fitur yang akan dibangun, atau tugas lainnya dalam proyek Anda. Pilih "Create" di navigasi. Masalah Anda akan muncul di backlog atau board proyek.
 ![image](https://github.com/nois44/nois44.github.io/assets/94152526/1be22b43-d223-4b24-882d-b19771cec780)
 #### Step 5; Integrasikan Jira dengan software lain, sebagai proyek GitLab tadi yang telah dibuat.
