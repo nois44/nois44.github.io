@@ -91,7 +91,7 @@ Issue adalah landasan proyek Perangkat Lunak Jira Anda. Suatu masalah dapat mewa
 #### Step 6: Undang tim Anda
 Setelah Anda memiliki cukup banyak pekerjaan yang terwakili di dewan Anda, mulailah mengundang anggota tim.
 ![image](https://github.com/nois44/nois44.github.io/assets/94152526/64bfeab3-ebe7-4ddc-ad9b-92433f4f79fe)
-#### Step 7:
+#### Step 7: Pindahkan pekerjaan ke depan (To Do, In Progress, Testing, Done)
 Kini setelah tim Anda bergabung dengan situs Jira Software, Anda siap berkolaborasi dan melacak pekerjaan bersama. Jika Anda berada dalam proyek scrum, Anda harus membuat dan memulai sprint untuk mulai melacak pekerjaan. Jika Anda berada dalam proyek kanban, Anda dapat mulai melacak pekerjaan di board tulis. Untuk melacak item pekerjaan, pindahkan masalah dari satu kolom ke kolom lainnya seiring perkembangannya dalam alur kerja tim Anda.
 ![image](https://github.com/nois44/nois44.github.io/assets/94152526/5425afbe-6071-4d8e-b9c2-b4fd522456ef)
 
