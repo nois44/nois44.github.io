@@ -21,9 +21,9 @@ GitLab menawarkan beberapa keuntungan penting bagi developer. Berikut adalah beb
 Sebelum memulai diharapkan telah memiliki akun Gitlab, jika anda belum memiliki akun Gitlab, maka anda bisa melakukan registrasi dengan memilih tombol "Register Now" pada halaman login. Nah, setelah memiliki akun Gitlab, sekarang kita dapat memulai membuat proyek Gitlab pertama anda.
 #### Step 1 : Pilih menu atau tombol "Create New Project"
 #### Step 2 : Pilih Create Blank Project
-![step2gitlab](image/Step2.png)
+![Step2](https://github.com/nois44/nois44.github.io/assets/94152526/4c835c3e-639d-4c36-af57-734484d2d991)
 #### Step 3 : Isi Data untuk Proyek yang ingin dibuat
-![step3gitlab](image/Step3.png)
+![Step3](https://github.com/nois44/nois44.github.io/assets/94152526/54201776-fdb5-4013-a4cd-9f854c6cac5d)
 #### Step 4 : Setelah proyek dibuat, disarankan untuk melakukan konfigurasi nama dan email dengan GitBash
 ```GitBash
 $ Git config --global user.name "First"
