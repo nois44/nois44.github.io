@@ -1,5 +1,5 @@
 +++
-title = 'Test-Driven Development'
+title = 'Analisis Statistik dari Kualitas Pemrograman'
 date = 2024-02-26T04:21:30+07:00
 author = 'Gabriel Edgar'
 draft = false
