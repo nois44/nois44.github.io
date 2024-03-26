@@ -1,6 +1,6 @@
 +++
 title = 'Analisis Statistik dari Kualitas Pemrograman'
-date = 2024-02-26T04:21:30+07:00
+date = 2024-03-24T04:21:30+07:00
 author = 'Gabriel Edgar'
 draft = false
 +++
