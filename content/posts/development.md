@@ -1,5 +1,5 @@
 +++
-title = 'Test-Driven Development'
+title = 'Prinsip SOLID dalam Pemrograman'
 date = 2024-03-27T04:21:30+07:00
 author = 'Gabriel Edgar'
 draft = false
