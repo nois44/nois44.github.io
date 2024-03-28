@@ -1,6 +1,6 @@
 +++
 title = 'Prinsip SOLID dalam Pemrograman'
-date = 2024-03-27T04:21:30+07:00
+date = 2024-03-24T09:10:30+07:00
 author = 'Gabriel Edgar'
 draft = false
 +++
