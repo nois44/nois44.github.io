@@ -24,7 +24,7 @@ Analisis statis kualitas program adalah teknik untuk mengevaluasi kualitas peran
 - Efisiensi dan Konsistensi: Proses analisis statis dapat dilakukan secara otomatis, menyediakan evaluasi konsisten dan menyeluruh dari kode, serta membebaskan waktu pengembang untuk fokus pada pemecahan masalah yang lebih kompleks.
 
 ## Penerapan pada SonarQube dan SonarCloud
-#### Langkah-langkah untuk menggunakan SonarQube: 
+#### Contoh Penggunaan SonarQube: 
 - Pengaturan Proyek: Integrasikan SonarQube ke dalam aliran kerja pengembangan  dan atur proyek .
 - Analisis Kode: Gunakan SonarQube untuk melakukan analisis kode pada proyek . Alat ini akan memeriksa kode dan memberikan laporan kualitas yang mencakup masalah, cacat, dan peringatan kualitas.
 - Hasil Interpretasi: Tinjau hasil analisis SonarQube dan cari masalah yang paling penting untuk meningkatkan kualitas kode .
@@ -32,12 +32,33 @@ Analisis statis kualitas program adalah teknik untuk mengevaluasi kualitas peran
 - Re-analisis: Setelah  melakukan perubahan, jalankan kembali analisis kode menggunakan SonarQube untuk memastikan bahwa perubahan  telah memperbaiki masalah yang telah diidentifikasi sebelumnya.
 - Siklus Kontinu: Gunakan SonarQube secara konsisten dalam aliran kerja pengembangan . Setel agar analisis kode dilakukan secara otomatis setiap kali ada perubahan dalam kode sumber. Ini memungkinkan  untuk terus mengawasi dan meningkatkan kualitas kode secara konsisten.
 
-#### Langkah-langkah untuk menggunakan SonarCloud:
+#### Contoh Penggunaan SonarCloud:
 - Integrasi dengan Repositori: Agar SonarCloud dapat menganalisis secara otomatis setiap perubahan kode yang diajukan ke repositori ,  harus mengintegrasikan SonarCloud dengan penyedia repositori kode sumber seperti GitHub atau Bitbucket.
 - Pengaturan Analisis Otomatis: Konfigurasikan aliran kerja SonarCloud untuk secara otomatis menganalisis setiap perubahan kode yang diunggah ke repositori. Pastikan pengaturan analisis sesuai dengan preferensi dan kebutuhan proyek .
 - Tinjau Hasil Analisis: Tinjau laporan hasil analisis SonarCloud untuk menemukan masalah kualitas kode yang perlu diperbaiki.
 - Perbaikan Kode: Untuk meningkatkan kualitas dan keamanan kode , pastikan untuk memperbaiki masalah prioritas tinggi terlebih dahulu. Lakukan perubahan pada kode  sesuai dengan masalah yang diidentifikasi oleh SonarCloud.
 - Siklus Pengembangan Berkelanjutan: Untuk menerapkan praktik pengembangan berkelanjutan, gunakan SonarCloud. Untuk memastikan bahwa kode  tetap berkualitas, selalu periksa laporan kualitas kode dan lakukan perbaikan secara teratur.
+
+#### Berikut merupakan kode yang diperlukan untuk setup sonarqube pada sebuah project
+Dengan menambahkan _stage_ berikut, pada file .gitlab-ci.yml di root sebuah projek, maka sonarqube akan terhubung dengan project tersebut
+```yml
+sonarqube-check:
+  image:
+    name: sonarsource/sonar-scanner-cli:latest
+    entrypoint: [""]
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - sonar-scanner -Dsonar.qualitygate.wait=true
+  allow_failure: true
+  rules:
+    - if: $CI_COMMIT_REF_NAME == 'main' || $CI_PIPELINE_SOURCE == 'merge_request_event'
+```
 
 ## Pengembangan Kode Berdasarkan Hasil SonarCloud dan SonarQube
 - Setelah menerima laporan dari SonarQube atau SonarCloud, ada beberapa langkah yang dapat diambil untuk meningkatkan kualitas dan keamanan kode:
