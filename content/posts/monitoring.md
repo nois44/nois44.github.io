@@ -1,5 +1,5 @@
 +++
-title = 'Panduan GIT Tingkat Lanjut'
+title = 'Platform Monitoring'
 date = 2024-05-14T12:14:12+07:00
 author = 'Gabriel Edgar'
 draft = false
@@ -72,3 +72,7 @@ Profiling memberikan konteks pada tingkat yang lebih dalam dibandingkan penelusu
 
 ## Kesimpulan
 Error Monitoring adalah proses memantau dan mengidentifikasi kesalahan, kerusakan, pengecualian, atau perilaku tak terduga dalam perangkat lunak. Sentry, sebagai sistem pemantauan kesalahan, menyediakan manajemen kinerja aplikasi dan integrasi dengan framework Django melalui paket Python. Dengan menggunakan Sentry, pengembang dapat melacak kinerja perangkat lunak, mendeteksi dan mencatat kesalahan, serta melakukan profiling untuk visibilitas eksekusi aplikasi yang lebih mendalam.
+
+### Referensi
+1. https://docs.sentry.io/platforms/python/performance/#configure
+2. https://www.mytaskpanel.com/when-to-use-sentry/#:~:text=Sentry%20provides%20instant%20visibility%20of,error%20occurs%20in%20the%20application.
